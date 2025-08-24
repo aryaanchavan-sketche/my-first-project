@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+api:
+  build: ./backend
+  environment:
+          -APP_SECRET=$
+        {APP_SECRET:-change_me}
+  ports:
+      - "8000:8000"
+  volumes:
+      - ./backend:/app
+  web:
+    image: python:3.11-slim
+    working_dir: /site
+    command: python -m http.server 5173
+    volumes: 
+       - ./frontend:/site
+    ports:
+       - "5173:5173"
+       
+

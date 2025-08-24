@@ -1,0 +1,11 @@
+:root  {--bg:#0f172a; --card:#111827; --text:#e5e7eb; --accent:#38bdf8;}
+*{box-sizing:border-box}
+body{ font-family:system-ui,-apple-system,segoe UI,Roboto,Helvetica,Arial,sans-serif; margin:0; background:var(--bg);color:var(--text)}
+header{ padding:24px; text-align:center }
+.card { background:var (--card); margin: 16px auto; padding:16px; border-radius: 14px; max-width:900 px; box-shadow:0 10px 20px rgba(0,0,0,.25)}
+.row{ display:flex; flex-wrap:wrap; gap:8 px; align-items:center }
+input{ padding:10px 12px; border-radius:10px; border:1px solid #2c2c2c; background:#0b1220; color: var(--text)}
+button{ padding:10px 14px; border-radius:10px; border:0; cursor:pointer; background:var(--accent); color:#02223a; font-weight:700}
+button:hover{filter:brightness(1.05)}
+.booking{ background:#0b1220; border:1px solid #1f2937; border-radius:12px; padding:12px; margin:8px 0}
+

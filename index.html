@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+content="width=device-width,initial-scale=1"/>
+<title>Rikshaw For Ride _ Production-Ready Demo</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#6ea8fe" />
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+   <header>
+      <h1>Rickshaw Finder</h1>
+      <p class="tag">OTP Login •₹1 Subscription • Live Drivers</p>
+      </header>
+<main>
+    <section class="grid">
+      <section class="card">
+        <h2>Login (OTP)</h2>
+        <div class="row">
+            <input id="name"
+placeholder="Your Name"/>
+            <input id="phone"
+placeholder="phone(+91...)" />
+        <button
+id="otpSend">Send OTP</button>
+        <input id="otpcode"
+placeholder="6-digit OTP" />
+       <button
+id="otpVerify">Verify</button>
+        </div>
+        <div class="row">
+            <button
+id="subscribeBtn">pay ₹1 (mock) </button>
+       <span id="subStatus" 
+       class="pill">Inactive</span>
+    </div>
+    </section>
+
+    <section class="card">
+        <h2>Map & Nearby Drivers</h2>
+        <div class="row">
+            <button
+            id="locationBtn">Use My Location</button>
+        <input id="lat"
+        placeholder="Latitude"/>
+        <input id="lng"
+        placeholder="Longitude"/>
+        <input id="radius"
+        placeholder="Radius km"
+        value="5"/>
+
+        <button
+        id="searchBtn">Search</button>
+    </div>
+    <div id="map"></div>
+    <ul id="drivers"
+    class="list"></ul>
+    </section>
+    </section>
+
+    <section class="grid">
+        <section class="card">
+            <h2>Fare Estimate</h2>
+            <div class="row">
+                <input id="destlat"
+                placeholder="Destination Lat"/>
+                <input id="destlng"
+                placeholder="Destination Lng"/>
+                <button id="estimateBtn">Estimate Fare</button>
+            </div>
+            <p id="estimateOut"
+            class="muted"></p>
+        </section>    
+
+        <section class="card">
+            <h2>Book Ride</h2>
+            <div class="row">
+                <label
+                class="checkbox"><input
+            type="checkbox" id="shared"/>
+            shared ride (eco)</label>
+            </div>
+            <p class="muted small">Pick a driver below and hit Book.safety share link+ optional SMS.</p>
+        </section>
+        </section>
+
+        <section class="grid">
+            <section class="card">
+                <h2>My Bookings</h2>
+                <button
+                id="refreshBookings">Refresh</button>
+                <ul id="bookings"
+                class="list"></ul>
+            </section>
+            <section class="card">
+                <h2>Safety: Share My Ride</h2>
+                <div class="row">
+                    <input id="shareToken"
+                    placeholder="paste shared token"/>
+                    <button
+                    id="lookupShare">Lookup</button>
+                </div>
+                <pre id="shareInfo"
+                class="pre"> </pre>
+            </section>
+        </main>
+
+        <footer>
+            <small>Demo only.Swap mock payment + OTP with real providers before launch.</small>
+        </footer>
+        
+        <script src="script.js"></script>
+        <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+        </script>
+        </body>
+        </html>
+

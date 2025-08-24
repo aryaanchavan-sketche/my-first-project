@@ -1,0 +1,7 @@
+Flask==3.0.3
+Flask-cors==4.0.1
+Flask-socketIO==5.3.6
+python-socketIO==5.11.2
+eventlet==0.36.1
+pyJWT==2.8.0
+python-dotenv==1.0.1
